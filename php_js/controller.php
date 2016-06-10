@@ -5,27 +5,11 @@
 		$_SESSION["username"] = $_POST["Username"];
 		$_SESSION["password"] = $_POST["Password"];
 	   	if (($_SESSION["username"] == getUserData()) AND ($_SESSION["password"] == getPassData())){
-	   		echo "Verified User <br>";
-	   		$_SESSION["username"];
-	   	} else {
+	   		include("view.php");
+	   	}else{
 	   		echo "Username or Password are incorrect!";
 	   		exit;
-	   	}
-	   	if (isset($_SESSION['username'])){
-	  		echo "Logged in user : ". $_SESSION["username"];
-	   		
-	  		$colour = array("blue", "yellow");
-	  		
-	  		echo '<select name="colour">';
-	  		
-	  		foreach ($colour as &$option) {
-	  			echo '<option>'. $option . '</option>';
-	  		}
-	  		
-	  		echo '</select>';
-	  		
-	  		
-	   	}
+	   	} 	
 	}
 ?>
 	
